@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_coffe_app2/AppState.dart';
+import 'package:flutter_test_coffe_app2/reducers/actions.dart';
 import 'package:redux/redux.dart';
 
 class ViewModel {
@@ -36,7 +37,6 @@ class ViewModel {
         drawerHeaderImage = "assets/images/coffee_03.webp";
         themeColor = Colors.orange[200];
         textColor = Colors.blue[900];
-
         bottomTabsIcons = [
           TabInfo(Icons.account_box, "b3/t1"),
           TabInfo(Icons.subject, "b3/t2"),
@@ -47,8 +47,8 @@ class ViewModel {
   }
 
   factory ViewModel.create(Store<AppState> store) {
-    return ViewModel(store.state.sideBarMode, (int i) {
-      store.dispatch(ChangeModeAction(SideBarMode.values[i]));
+    return ViewModel(store.state.sideBarMode, (SideBarMode mode) {
+      store.dispatch(new ChangeModeAction(mode));
     });
   }
 }
@@ -57,9 +57,4 @@ class TabInfo {
   IconData icon;
   String text;
   TabInfo(this.icon, this.text);
-}
-
-class ChangeModeAction {
-  SideBarMode index;
-  ChangeModeAction(this.index);
 }

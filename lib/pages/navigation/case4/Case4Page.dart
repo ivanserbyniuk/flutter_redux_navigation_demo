@@ -29,28 +29,27 @@ class Case4Page extends StatelessWidget {
       );
 
   _buildAppbar(ViewModel viewModel) =>
-      new AppBar(flexibleSpace: new Image.asset(viewModel.drawerHeaderImage,
+      AppBar(flexibleSpace: new Image.asset(viewModel.drawerHeaderImage,
         fit: BoxFit.fitWidth,
       ), actions: <Widget>[IconButton(icon: Icon(Icons.pin_drop, color: viewModel.themeColor,), onPressed: () {})],);
 
   _buildDrawer(BuildContext context, ViewModel viewModel) {
-    createTile(IconData iconData, int index) =>
-        ListTile(
-          leading: Icon(iconData),
+    createTile(IconData iconData, int index, SideBarMode mode) =>
+        ListTile(leading: Icon(iconData),
           title: Text("Button $index"),
-          onTap: (){
+          onTap: () {
             Navigator.pop(context);
-            viewModel.onNewItem(index-1);},
+            viewModel.onNewItem(mode);
+          },
         );
     return Drawer(
       child: Column(children: <Widget>[
-        DrawerHeader(
-          child: Container(),
+        DrawerHeader(child: Container(),
           decoration: BoxDecoration(image: DecorationImage(image: ExactAssetImage(viewModel.drawerHeaderImage),
               fit: BoxFit.fill)),),
-        createTile(Icons.map, 1),
-        createTile(Icons.insert_drive_file, 2),
-        createTile(Icons.wb_sunny, 3)
+        createTile(Icons.map, 1, SideBarMode.one),
+        createTile(Icons.insert_drive_file, 2, SideBarMode.two),
+        createTile(Icons.wb_sunny, 3, SideBarMode.three)
       ],
       ),
     );
