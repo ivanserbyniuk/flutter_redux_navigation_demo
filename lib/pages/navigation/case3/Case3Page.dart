@@ -6,10 +6,12 @@ import 'package:redux/redux.dart';
 
 
 class Case3Page extends StatelessWidget {
+  final TextEditingController _controller = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return new StoreConnector<AppState, LockViewModel>(converter: (Store store) => LockViewModel.create(store),
+    return new StoreConnector<AppState, LockViewModel>(
+        converter: (Store store) => LockViewModel.create(store),
         builder: (BuildContext context, LockViewModel viewModel) => _buildMainContent(viewModel)
     );
   }
@@ -25,6 +27,7 @@ class Case3Page extends StatelessWidget {
           backgroundColor: Colors.red,),),);
     }
     else {
+      _controller.text = viewModel.lockedMessage;
       return new Scaffold(
         appBar: AppBar(title: Text("Use case 3"),
           actions: <Widget>[
@@ -32,11 +35,13 @@ class Case3Page extends StatelessWidget {
                 onPressed: () => viewModel.lock(true)),
           ],),
         body: new Container(padding: EdgeInsets.symmetric(horizontal: 8.0),
-            child: new Center(child: TextField(
-
-              onChanged: (text) => viewModel.saveMessage(text),
-              decoration: InputDecoration(hintText: 'Type something',),
-            ))),);
+            child: new Center(
+              child: TextField(
+                controller: _controller,
+                onChanged: (text) => viewModel.saveMessage(text),
+                decoration: InputDecoration(hintText: 'Type something',),
+              ),
+           )),);
     }
   }
 
