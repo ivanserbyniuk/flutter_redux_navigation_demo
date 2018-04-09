@@ -30,8 +30,6 @@ flutter:
     - assets/images/coffee_01.jpg
     - assets/images/coffee_02.jpg
     - assets/images/coffee_03.webp
-    - assets/images/mimault.jpg
-    - assets/images/patern.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

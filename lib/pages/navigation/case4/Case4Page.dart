@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_test_coffe_app2/AppState.dart';
+import 'package:flutter_test_coffe_app2/redux/AppState.dart';
 import 'package:flutter_test_coffe_app2/pages/navigation/case4/ViewModel.dart';
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -45,11 +45,12 @@ class Case4Page extends StatelessWidget {
     return Drawer(
       child: Column(children: <Widget>[
         DrawerHeader(child: Container(),
-          decoration: BoxDecoration(image: DecorationImage(image: ExactAssetImage(viewModel.drawerHeaderImage),
+          decoration: BoxDecoration(image: DecorationImage(
+              image: ExactAssetImage(viewModel.drawerHeaderImage),
               fit: BoxFit.fill)),),
-        createTile(Icons.map, 1, SideBarMode.one),
-        createTile(Icons.insert_drive_file, 2, SideBarMode.two),
-        createTile(Icons.wb_sunny, 3, SideBarMode.three)
+        createTile(Icons.map, 1, SideBarMode.first),
+        createTile(Icons.insert_drive_file, 2, SideBarMode.second),
+        createTile(Icons.wb_sunny, 3, SideBarMode.third)
       ],
       ),
     );

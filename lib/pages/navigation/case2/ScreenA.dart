@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ScreenA extends StatelessWidget {
-  Widget mainButton;
-  String name;
-
+  final Widget mainButton;
+  final String name;
 
   ScreenA(this.name, this.mainButton);
 

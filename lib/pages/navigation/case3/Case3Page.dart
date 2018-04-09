@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:flutter_test_coffe_app2/AppState.dart';
-import 'package:flutter_test_coffe_app2/reducers/actions.dart';
+import 'package:flutter_test_coffe_app2/redux/AppState.dart';
+import 'package:flutter_test_coffe_app2/redux/actions.dart';
 import 'package:redux/redux.dart';
 
 
@@ -44,7 +44,6 @@ class Case3Page extends StatelessWidget {
            )),);
     }
   }
-
 }
 
 class LockViewModel {

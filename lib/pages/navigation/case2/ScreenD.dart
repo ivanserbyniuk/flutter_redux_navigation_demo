@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ScreenD extends StatelessWidget {
-  static final KEY = "backTo";
-  String buttonLabel;
-  int backScreenIndex;
+  static const KEY = "backTo";
+  final String buttonLabel;
+  final int backScreenIndex;
 
   ScreenD(this.buttonLabel, this.backScreenIndex);
 

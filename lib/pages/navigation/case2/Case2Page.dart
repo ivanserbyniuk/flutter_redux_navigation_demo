@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_coffe_app2/AppState.dart';
+import 'package:flutter_test_coffe_app2/redux/AppState.dart';
 import 'package:flutter_test_coffe_app2/pages/navigation/case2/ScreenA.dart';
 import 'package:flutter_test_coffe_app2/pages/navigation/case2/ScreenD.dart';
 import 'package:flutter_test_coffe_app2/pages/navigation/case2/ViewModel.dart';

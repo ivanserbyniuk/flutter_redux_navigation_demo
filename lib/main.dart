@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_coffe_app2/AppState.dart';
+import 'package:flutter_test_coffe_app2/redux/AppState.dart';
 import 'package:flutter_test_coffe_app2/pages/home.dart';
-import 'package:flutter_test_coffe_app2/reducers/app_reducer.dart';
+import 'package:flutter_test_coffe_app2/redux/app_reducer.dart';
 
 import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -10,7 +10,7 @@ void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
   final Store<AppState> store = Store<AppState>(
-    appReducer, /* Function defined in the reducers file */
+    appReducer,
     initialState: AppState.initial(),
     middleware: [],
   );

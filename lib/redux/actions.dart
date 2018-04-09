@@ -1,4 +1,4 @@
-import 'package:flutter_test_coffe_app2/AppState.dart';
+import 'package:flutter_test_coffe_app2/redux/AppState.dart';
 
 
 class ChangeModeAction {
@@ -19,4 +19,7 @@ class LockAction {
 class LockedMessageAction {
   String lockedMessage;
   LockedMessageAction(this.lockedMessage);
+}
+
+class LoadFinishAction {
 }
