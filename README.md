@@ -1,7 +1,6 @@
 # flutter_test_coffe_app2
 
-A new Flutter application.
-
+Test Redux for Flutter
 ## Getting Started
 
 For help getting started with Flutter, view our online
