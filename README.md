@@ -1,7 +1,8 @@
-# flutter_test_coffe_app2
+# flutter_test_coffe_app
 
 Test Redux for Flutter
-## Getting Started
+![alt text](https://github.com/ivanserbyniuk/flutter_redux_navigation_demo/blob/master/device-2018-04-20-140715.png)
+
 
 For help getting started with Flutter, view our online
 [documentation](https://flutter.io/).
