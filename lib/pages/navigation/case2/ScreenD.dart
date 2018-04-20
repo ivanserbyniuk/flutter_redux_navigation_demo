@@ -10,13 +10,13 @@ class ScreenD extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = "Screen D";
-    return Scaffold(
-      appBar: AppBar(title: Text(title),),
-      body: Container(child: Center(
-        child: Text(title, style: TextStyle(fontSize: 20.0),),),),
-      floatingActionButton: FloatingActionButton(
-          child: Text(buttonLabel,
-            style: TextStyle(fontSize: 20.0, color: Colors.white),),
+    return new Scaffold(
+      appBar: new AppBar(title: new Text(title),),
+      body:new  Container(child: new Center(
+        child: Text(title, style: new TextStyle(fontSize: 20.0),),),),
+      floatingActionButton: new FloatingActionButton(
+          child: new Text(buttonLabel,
+            style: new TextStyle(fontSize: 20.0, color: Colors.white),),
           onPressed: () =>
               Navigator.of(context).pop({KEY: backScreenIndex})
       ),

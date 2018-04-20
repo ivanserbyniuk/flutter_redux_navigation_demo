@@ -25,7 +25,7 @@ class ViewModel {
         break;
       case SideBarMode.second :
         drawerHeaderImage = "assets/images/coffee_02.jpg";
-        themeColor = Colors.yellow[200];
+        themeColor = Colors.yellow[600];
         textColor = Colors.brown[500];
         bottomTabsIcons = [
           TabInfo(Icons.map, "b2/t1"),

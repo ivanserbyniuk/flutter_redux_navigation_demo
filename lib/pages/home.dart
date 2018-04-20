@@ -8,11 +8,20 @@ class HomeScreen extends StatelessWidget {
     return new Column(
       children: <Widget>[
         Padding(padding: EdgeInsets.only(top: 24.0),),
-        buildButton(context,label: "Navigation", routeTo: new NavigationPage()),
-        buildButton(context,label: "Filestorage and Photos", ),
-        buildButton(context,label: "List", ),
+        buildButton(context, label: "Navigation", routeTo: new NavigationPage()),
+        buildButton(context, label: "Filestorage and Photos", routeTo: new _EmptyWidget()),
+        buildButton(context, label: "List", routeTo: new _EmptyWidget()),
       ],
       crossAxisAlignment: CrossAxisAlignment.stretch,
     );
   }
+
+}
+
+class _EmptyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) =>
+      Scaffold(appBar: AppBar(title: Text("Empty Screen",),),
+        body: Center(child: Text("Empty screen"),),);
+
 }

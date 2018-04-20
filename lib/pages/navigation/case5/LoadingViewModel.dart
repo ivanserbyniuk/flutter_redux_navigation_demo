@@ -8,7 +8,7 @@ class LoadingViewModel {
   LoadingViewModel(this.isLoaded, this.loadFinish);
 
   factory LoadingViewModel.create(Store<AppState> store) {
-    return LoadingViewModel(store.state.isContentLoaded,
+    return new LoadingViewModel(store.state.isContentLoaded,
           () => store.dispatch(new LoadFinishAction()),);
   }
 }

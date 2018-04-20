@@ -18,30 +18,30 @@ class Case3Page extends StatelessWidget {
 
   _buildMainContent(LockViewModel viewModel) {
     if (viewModel.isLocked) {
-      return Container(
+      return new Container(
         color: Colors.blue[800],
-        child: Center(child:
-        FloatingActionButton(
+        child: new Center(child:
+        new FloatingActionButton(
           onPressed: () => viewModel.lock(false),
-          child: Icon(Icons.lock_open),
+          child: new Icon(Icons.lock_outline),
           backgroundColor: Colors.red,),),);
     }
     else {
       _controller.text = viewModel.lockedMessage;
       return new Scaffold(
-        appBar: AppBar(title: Text("Use case 3"),
+        appBar: new AppBar(title: new Text("Use case 3"),
           actions: <Widget>[
-            IconButton(icon: new Icon(Icons.lock_open, color: Colors.red,),
+            new IconButton(icon: new Icon(Icons.lock_open, color: Colors.red,),
                 onPressed: () => viewModel.lock(true)),
           ],),
-        body: new Container(padding: EdgeInsets.symmetric(horizontal: 8.0),
+        body: new Container(padding: new EdgeInsets.symmetric(horizontal: 8.0),
             child: new Center(
-              child: TextField(
+              child: new TextField(
                 controller: _controller,
                 onChanged: (text) => viewModel.saveMessage(text),
-                decoration: InputDecoration(hintText: 'Type something',),
+                decoration: new InputDecoration(hintText: 'Type something',),
               ),
-           )),);
+            )),);
     }
   }
 }

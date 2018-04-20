@@ -9,7 +9,7 @@ class TabViewModel{
   TabViewModel(this.tabIndex, this.selectTab);
 
   factory TabViewModel.create(Store<AppState> store) {
-    return TabViewModel(store.state.tabIndex, (int tabIndex) {
+    return new TabViewModel(store.state.tabIndex, (int tabIndex) {
       store.dispatch(new ChangeTabAction(tabIndex));
     });
   }

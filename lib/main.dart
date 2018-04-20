@@ -9,7 +9,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
-  final Store<AppState> store = Store<AppState>(
+  final Store<AppState> store = new Store<AppState>(
     appReducer,
     initialState: AppState.initial(),
     middleware: [],
@@ -19,10 +19,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new StoreProvider(
       store: store,
-      child: MaterialApp(
+      child: new MaterialApp(
         title: 'Flutter Demo',
         theme: new ThemeData(
-          primarySwatch: Colors.blue,
+          primaryColor: Colors.blue[900],
+          accentColor: Colors.red[700]
         ),
         home: new Scaffold(
           appBar: new AppBar(title: Text("test app"),),

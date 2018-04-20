@@ -12,13 +12,13 @@ class Case1Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = "Screen $name";
-    return Scaffold(
-      appBar: AppBar(title: Text(title),),
-      body: Container(child: Center(
-        child: Text(title, style: TextStyle(fontSize: 20.0),),),),
-      floatingActionButton: action == null ? null : FloatingActionButton(
-          child: Text(actionName,
-            style: TextStyle(fontSize: 20.0, color: Colors.white),),
+    return new Scaffold(
+      appBar: new AppBar(title: new Text(title),),
+      body: new Container(child:new  Center(
+        child: new Text(title, style: new TextStyle(fontSize: 24.0),),),),
+      floatingActionButton: action == null ? null : new FloatingActionButton(
+          child: new Text(actionName,
+            style: new TextStyle(fontSize: 20.0, color: Colors.white),),
           onPressed: () => action()
       ),
     );
@@ -28,33 +28,32 @@ class Case1Screen extends StatelessWidget {
 class AScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
-      Case1Screen("A", "B", () =>
-          Navigator.push(context, createRoute( BScreen(), name: "B")));
+      new Case1Screen("A", "B", () =>
+          Navigator.push(context, createRoute(new BScreen(), name: "B")));
 }
 
 class BScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
-      Case1Screen("B", "C", () =>
-          Navigator.push(context, createRoute(CScreen(), name: "C")));
+      new Case1Screen("B", "C", () =>
+          Navigator.push(context, createRoute(new CScreen(), name: "C")));
 
 }
 
 class CScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
-      Case1Screen("C", "M", () =>
-          Navigator.push(context, MaterialPageRoute(
+     new  Case1Screen("C", "M", () =>
+          Navigator.push(context, new MaterialPageRoute(
               builder: (context) => new ModalScreen(), fullscreenDialog: true)));
 }
 
 class ModalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
-      Case1Screen("M", "N", () {
+      new Case1Screen("M", "N", () {
         List<Route> routs = [];
-        var cupertinoPageRoute = CupertinoPageRoute(
-            builder: (context) => new NScreen(routs));
+        var cupertinoPageRoute = createRoute(new NScreen(routs));
         routs.add(cupertinoPageRoute);
         return Navigator.push(context, cupertinoPageRoute);
       });
@@ -68,8 +67,8 @@ class NScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      Case1Screen("N", "D", () {
-        Route route = CupertinoPageRoute(builder: (context) => new DScreen(),);
+     new  Case1Screen("N", "D", () {
+        Route route = createRoute(new DScreen());
         Navigator.of(context).removeRoute(currentRoute[0]);
         Navigator.of(context)
           ..pop()
@@ -79,7 +78,7 @@ class NScreen extends StatelessWidget {
 
 class DScreen extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => Case1Screen("D", "", null);
+  Widget build(BuildContext context) => new Case1Screen("D", "", null);
 }
 
 

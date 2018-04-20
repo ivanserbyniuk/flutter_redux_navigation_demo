@@ -8,10 +8,10 @@ class ScreenA extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child:  Column(children: <Widget>[
+    return new Center(child:  new Column(children: <Widget>[
       mainButton,
-      Text("Screen $name", style: TextStyle(fontSize: 20.0,  fontWeight: FontWeight.bold),)
-    ],mainAxisAlignment: MainAxisAlignment.spaceAround,
+      new Text("Screen $name", style: new TextStyle(fontSize: 20.0,  fontWeight: FontWeight.bold),)
+    ],mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     ));
   }
 }
